@@ -1,0 +1,207 @@
+:root {
+    --primary-color: #2f2f2f;
+    --accent-color: #00796b;
+    --light-bg: #f9f9f9;
+    --text-color: #333;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: var(--light-bg);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #333;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+section {
+padding: 3rem;
+text-align: center;
+background-color: #fff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px;
+}
+
+h2 {
+color: #333;
+font-weight: bold;
+margin-top: 0;
+}
+
+/* Fondo alterno en secciones */
+
+section:nth-child(odd) {
+background-color: #f9f9f9;
+}
+
+/* Formularios */
+
+form label,
+form input,
+form select,
+form textarea {
+display: block;
+margin: 15px auto;
+width: 100%;
+max-width: 400px;
+text-align: left;
+}
+
+form input,
+form select,
+form textarea {
+padding: 15px;
+font-size: 1rem;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+form button {
+background-color: #333;
+color: #fff;
+border: none;
+padding: 15px 30px;
+cursor: pointer;
+border-radius: 5px;
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+background-color: #00796b;
+transform: scale(1.05);
+}
+
+/* Imágenes y videos */
+
+img,
+video {
+max-width: 100%;
+height: auto;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#galeria {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 1rem;
+padding: 20px;
+}
+
+/* Footer */
+
+footer {
+background-color: #2f2f2f;
+color: #fff;
+text-align: center;
+padding: 1.5rem 0;
+border-top: 2px solid #555;
+position: relative;
+bottom: 0;
+width: 100%;
+}
+
+/* Responsividad */
+
+@media (max-width: 768px) {
+nav ul {
+flex-direction: column;
+}
+nav ul li {
+margin: 10px 0;
+}
+section {
+padding: 2rem;
+}
+h2 {
+font-size: 1.5rem;
+}
+form label,
+form input,
+form select,
+form textarea {
+width: 90%;
+}
+}
+
+@media (max-width: 480px) {
+header {
+font-size: 0.9rem;
+}
+nav ul {
+flex-direction: column;
+text-align: center;
+}
+nav ul li {
+margin: 10px 0;
+}
+h2 {
+font-size: 1.3rem;
+}
+form input,
+form select,
+form textarea {
+font-size: 1.1rem;
+}
+#formulario-login {
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background: rgba(0, 0, 0, 0.5); 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    visibility: hidden; /* Agregar esta propiedad para asegurarte que no se vea antes de mostrarse */
+}
+
+#formulario-login.show {
+    display: flex;
+    visibility: visible; /* Hacerlo visible cuando se activa */
+}
+
+/* Estilo para el contenedor del formulario */
+#formulario-login div {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+}
+}    

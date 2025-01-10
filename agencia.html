@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Excursiones increíbles a Tampico y Tamiahua con MetalViajes">
+    <title>MetalViajes</title>
+    <link rel="stylesheet" href="marihuana.css">
+    <style>
+        /* Ocultar las secciones por defecto */
+        section {
+            display: none;
+        }
+
+        /* Mostrar solo la sección de inicio */
+        #inicio {
+            display: block;
+        }
+
+        /* Agregar esta clase para mostrar el formulario de login */
+        #formulario-login.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #formulario-login {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #formulario-login div {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+    function mostrarFormulario() {
+        document.getElementById('formulario-login').classList.add('show');
+    }
+
+    function validarLogin() {
+        var usuario = document.getElementById('usuario').value;
+        var contrasena = document.getElementById('contrasena').value;
+
+        if (usuario === 'Fred' && contrasena === 'lemmyisgod') {
+            alert('¡Has ingresado correctamente!');
+            window.location.href = 'contacto.php'; // Redirige al documento contacto.php
+        } else {
+            alert('Credenciales incorrectas.');
+        }
+    }
+
+    // Función para cambiar la sección visible
+    function mostrarSeccion(id) {
+        // Ocultar todas las secciones
+        var secciones = document.querySelectorAll('section');
+        secciones.forEach(function(seccion) {
+            seccion.style.display = 'none';
+        });
+
+        // Mostrar la sección seleccionada
+        document.getElementById(id).style.display = 'block';
+    }
+</script>
+</head>
+<body>
+   <header>
+    <h1>MetalViajes</h1>
+    <nav>
+        <ul>
+            <li><a href="javascript:void(0)" onclick="mostrarSeccion('inicio')">Inicio</a></li>
+            <li><a href="javascript:void(0)" onclick="mostrarSeccion('destinos')">Destinos</a></li>
+            <li><a href="javascript:void(0)" onclick="mostrarSeccion('eventos')">Eventos</a></li>
+            <li><a href="javascript:void(0)" onclick="mostrarSeccion('reservas')">Reservas</a></li>
+            <li><a href="javascript:void(0)" onclick="mostrarSeccion('galeria')">Galería</a></li>
+            <li><a href="javascript:void(0)" onclick="mostrarSeccion('contacto')">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+    
+
+<style>
+    header {
+    display: flex;
+    flex-direction: column; /* Título y navegación en columnas */
+    padding: 10px 20px;
+    font-size: 14px; /* Tamaño reducido */
+}
+
+h1 {
+    font-size: 24px; /* Reduce el tamaño del título */
+    margin: 0 0 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Flexbox para alinear elementos horizontalmente */
+    justify-content: flex-start; /* Alinea los elementos al inicio (izquierda) */
+    gap: 15px; /* Espaciado entre los enlaces */
+}
+
+nav ul li {
+    margin: 0; /* Elimina márgenes adicionales */
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 14px; /* Tamaño de fuente para los enlaces */
+    color: white; /* Color del texto */
+    transition: color 0.3s; /* Efecto al pasar el mouse */
+}
+
+nav ul li a:hover {
+    color: #007BFF; /* Cambia el color al pasar el mouse */
+}
+
+</style>
+       <section id="inicio">
+        <h2>Bienvenido a MetalViajes</h2>
+        <p id="contenido-editable">Descubre los encantos de la costa mexicana con nosotros. Ofrecemos emocionantes excursiones a Tampico, Tamaulipas, y Tamiahua, Veracruz. Disfruta de hermosas playas de Tampico y los bellos manglares de Tampico, rica historia y deliciosa gastronomía.<br><br>
+        ¡Explora, relájate y crea recuerdos inolvidables! Contáctanos para planificar tu próximo viaje.</p>
+    </section>
+
+    <section id="destinos">
+        <h2>Destinos</h2>
+        <div>
+            <h3>Tampico</h3>
+            <p id="contenido-editable">Explora las hermosas playas y cultura de Tampico.<br>
+            MetalViajes ofrece vuelos a Tampico desde $817 mediante la aerolínea Expedia.<br>
+            Paquetes vacacionales con un costo de $6,951</p>
+            <figure>
+                <img src="images/1.jpeg" alt="Hermosa playa de Tampico">
+                <figcaption>Playa en Tampico</figcaption>
+            </figure>
+            <figure>
+                <img src="images/Puente.jpg" alt="Puente de Tampico">
+                <figcaption>Puente de Tampico</figcaption>
+            </figure>
+            <figure>
+                <img src="images/Playa.jpg" alt="Playa Miramar de Tampico">
+                <figcaption>Playa Miramar</figcaption>
+            </figure>
+        </div>
+        <div>
+            <h3>Tamiahua Veracruz</h3>
+            <p id="contenido-editable">Conoce los manglares y deliciosa gastronomía de Tamiahua.<br>
+            MetalViajes ofrece paquetes vacacionales con costo de $7000</p>
+            <figure>
+                <img src="images/2.jpeg" alt="Manglares en Tamiahua">
+                <figcaption>Manglares de Tamiahua</figcaption>
+            </figure>
+            <figure>
+                <img src="images/Manglar.jpeg" alt="Manglares en Tamiahua">
+                <figcaption>Manglares en Tamiahua</figcaption>
+            </figure>
+            <figure>
+                <img src="images/tamiahua.jpeg" alt="Paisaje en Tamiahua">
+                <figcaption>Hermoso paisaje de Tamiahua</figcaption>
+            </figure>
+        </div>
+    </section>
+    <section id="eventos">
+  <h2>Eventos</h2>
+  <div>
+    <h3>Festival de Música en Tampico</h3>
+    <p>Fecha: 15 de marzo de 2023</p>
+    <p>Lugar: Parque de la Ciudad, Tampico</p>
+    <p>Descripción: Disfruta de un día de música en vivo con algunos de los mejores artistas de la región.</p>
+  </div>
+  <div>
+    <h3>Tour de Aventura en Tamiahua</h3>
+    <p>Fecha: 22 de abril de 2023</p>
+    <p>Lugar: Manglares de Tamiahua</p>
+    <p>Descripción: Explora los manglares de Tamiahua en un tour de aventura que incluye kayak, senderismo y observación de aves.</p>
+  </div>
+  <div>
+    <h3>Feria Gastronómica en Tampico</h3>
+    <p>Fecha: 10 de mayo de 2023</p>
+    <p>Lugar: Centro de Convenciones, Tampico</p>
+    <p>Descripción: Disfruta de una variedad de platillos típicos de la región en la Feria Gastronómica de Tampico.</p>
+  </div>
+</section>
+    <section id="reservas">
+        <h2>Reservas</h2>
+        <?php
+            session_start();
+            $csrf_token = bin2hex(random_bytes(32));
+            $_SESSION['csrf_token'] = $csrf_token;
+        ?>
+        <form action="reservaciones.php" method="POST">
+            <fieldset>
+                <legend>Detalles de Reserva</legend>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="destino">Destino:</label>
+                <select id="destino" name="destino" required>
+                    <option value=""></option>
+                    <option value="tampico">Tampico</option>
+                    <option value="tamiahua">Tamiahua</option>
+                </select>
+
+                
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+
+                <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
+
+                <button type="submit" name="submit">Reservar</button>
+            </fieldset>
+        </form>
+    </section>
+
+    <section id="galeria">
+        <h2>Galería</h2>
+        <div>
+            <figure>
+                <img src="images/1.jpeg" alt="Tampico">
+                <figcaption>Tampico</figcaption>
+            </figure>
+            <video controls>
+                <source src="Videos/Tampico hermoso.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+            <figure>
+                <img src="images/2.jpeg" alt="Tamiahua">
+                <figcaption>Tamiahua</figcaption>
+            </figure>
+            <video controls>
+                <source src="Videos/vamos a Tamiahua.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+            <fieldset>        
+                <legend>Contáctanos por nuestrs redes sociales</legend>
+        <li>Facebook: <a href="https://www.facebook.com/share/14aMCzpHgJ/" target="_blank">Chess-ajito: </a></li>
+        <li>Instagram<a href="https://www.instagram.com/moksha_chess?igsh=MWl5bnRva29zdXg1NA==" target="_blank">Moksha</a></li>
+        <li>YouTube: <a href="https://youtube.com/@chess-mv7xo?si=sUQevQ6XAfOB3Lh4" target="_blank">Chess</a></li>
+      
+    </section>
+
+    <footer>
+        <p>&copy; 2025 MetalViajes. Todos los derechos reservados.</p>
+        <button onclick="mostrarFormulario()">administrador</button>
+    </footer>
+
+    <!-- Formulario de login oculto -->
+    <div id="formulario-login">
+        <div>
+            <h3>Iniciar Sesión</h3>
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" placeholder="Ingresa tu usuario" required><br><br>
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" placeholder="Ingresa tu contraseña" required><br><br>
+            <button onclick="validarLogin()">Entrar</button>
+        </div>
+    </div>
+    </form>
+
+</body>
+</html>
